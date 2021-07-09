@@ -61,3 +61,33 @@ def get_avg_shortest_paths(net, A, B):
     
     return S_AB
 
+
+def separation(net, A, B):
+    """Calculate the separation [1]_ between node sets A and B.
+
+    Parameters
+    ----------
+    net: prximity.Network
+    A: container
+        A subset of nodes in net.Graph
+    B: container
+        A subset of nodes in net.Graph
+
+    Returns
+    -------
+    sep: the separation of nodes A and B in net.Graph
+
+    References
+    ----
+    .. [1] Menche, Jörg, et al.
+        Uncovering disease-disease relationships through the
+        incomplete interactome.
+        Science 347.6224 (2015).
+    """
+    s_aa = get_avg_shortest_paths(net, A, A)
+    s_bb = get_avg_shortest_paths(net, B, B)
+    s_ab = get_avg_shortest_paths(net, A, B)
+
+    sep = s_ab - (s_aa + s_bb) / 2
+
+    return sep

@@ -14,9 +14,9 @@ A class called `Network` serves as a wrapper to the libraries [graph-tool](https
 
 Examples of how to use the code can be found in the `jupyter` directory.
 
-## $S_{A,B}$ proximity
+## $S_{A,B}$ Separation
 
-Given two sets of nodes $A$ and $B$ from the same network, the $S_{A,B}$ proximity between $A$ and $B$ is defined as
+Given two sets of nodes $A$ and $B$ from the same network, the $S_{A,B}$ separation between $A$ and $B$ is defined as
 
 $$S_{A,B} = \langle d_{A,B}\rangle - \frac{\langle d_{A,A} \rangle + \langle d_{B,B} \rangle}{2} $$
 

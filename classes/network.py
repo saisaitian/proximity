@@ -1,4 +1,4 @@
-from measures.ab_proximity import get_avg_shortest_paths
+from measures.separation import separation
 
 
 class Network():
@@ -38,8 +38,5 @@ class Network():
 
     def S_AB(self, A, B):
         """Compute S_{A,B} proximity."""
-        s_aa = get_avg_shortest_paths(self, A, A)
-        s_bb = get_avg_shortest_paths(self, B, B)
-        s_ab = get_avg_shortest_paths(self, A, B)
 
-        return s_ab - (s_aa + s_bb) / 2
+        return separation(self, A, B)
